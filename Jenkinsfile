@@ -25,7 +25,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                    bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                    sh "docker run -d -p 8080:80 ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                    bat "docker run -d -p 8080:80 ${DOCKER_IMAGE}:${DOCKER_TAG}"
                 }
             }
         }
