@@ -33,7 +33,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                    bat "docker run -d -p 8080:80 ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                    bat "docker run -d -p 8090:80 ${DOCKER_IMAGE}:${DOCKER_TAG}"
                 }
             }
         }
